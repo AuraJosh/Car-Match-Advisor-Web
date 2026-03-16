@@ -5,6 +5,10 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: './', // Critical for GitHub Pages
+  build: {
+    outDir: 'docs',
+    emptyOutDir: true, // Ensure the folder is cleaned before build
+  },
   resolve: {
     alias: {
       '@': '/src',
