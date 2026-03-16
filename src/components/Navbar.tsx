@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import logo from '../CMA-Logo.png';
 import { Menu, X } from 'lucide-react';
 import { Button } from './ui/Button';
 import clsx from 'clsx';
@@ -56,7 +57,7 @@ export function Navbar() {
                         className="hover:opacity-80 transition-opacity"
                     >
                         <img
-                            src="src/CMA-Logo.png"
+                            src={logo}
                             alt="Car Match Advisor Logo"
                             className="h-10 w-auto"
                         />
