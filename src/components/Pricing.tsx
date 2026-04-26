@@ -59,7 +59,7 @@ export function Pricing() {
                     </p>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-5xl mx-auto">
+                <div className="flex flex-col lg:flex-row gap-8 justify-center items-center lg:items-stretch max-w-5xl mx-auto">
                     {plans.map((plan, index) => {
                         const isExtraCar = !!extraCarState[plan.name];
                         const finalPrice = isExtraCar ? (plan.price + plan.extraCarPrice).toFixed(2) : plan.price.toFixed(2);
