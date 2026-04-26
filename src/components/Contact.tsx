@@ -37,7 +37,7 @@ export function Contact() {
                         <textarea className="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand outline-none transition-all min-h-[120px] text-white placeholder:text-slate-500" placeholder="Family SUV, efficient commuter, fun weekend car, etc..."></textarea>
                     </div>
 
-                    <Button className="w-full">Get Started</Button>
+                    <Button className="w-full">Send</Button>
                 </form>
             </div>
         </section>

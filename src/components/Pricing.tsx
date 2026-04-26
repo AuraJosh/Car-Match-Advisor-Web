@@ -6,7 +6,16 @@ import { motion } from 'framer-motion';
 import clsx from 'clsx';
 
 export function Pricing() {
-    const [extraCar, setExtraCar] = useState(false);
+    const [extraCarState, setExtraCarState] = useState<Record<string, boolean>>({});
+
+    const getPaymentLink = (planName: string, isExtra: boolean) => {
+        if (planName === 'Standard') {
+            return isExtra ? 'https://buy.stripe.com/test_5kQ4gs1un2uvez1cKPfnO01' : 'https://buy.stripe.com/test_00w00c8WP8ST0Ib9yDfnO00';
+        } else if (planName === 'Premium') {
+            return isExtra ? 'https://buy.stripe.com/test_5kQbIUfld9WXez1127fnO03' : 'https://buy.stripe.com/test_5kQ6oAc916KL62v8uzfnO02';
+        }
+        return '#';
+    };
 
     const plans = [
         {
@@ -52,7 +61,8 @@ export function Pricing() {
 
                 <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch max-w-5xl mx-auto">
                     {plans.map((plan, index) => {
-                        const finalPrice = extraCar ? (plan.price + plan.extraCarPrice).toFixed(2) : plan.price.toFixed(2);
+                        const isExtraCar = !!extraCarState[plan.name];
+                        const finalPrice = isExtraCar ? (plan.price + plan.extraCarPrice).toFixed(2) : plan.price.toFixed(2);
 
                         return (
                             <motion.div
@@ -88,12 +98,12 @@ export function Pricing() {
                                             <input
                                                 type="checkbox"
                                                 id={`extra-${plan.name}`}
-                                                checked={extraCar}
-                                                onChange={(e) => setExtraCar(e.target.checked)}
+                                                checked={isExtraCar}
+                                                onChange={(e) => setExtraCarState(prev => ({ ...prev, [plan.name]: e.target.checked }))}
                                                 className="w-5 h-5 rounded border-slate-300 text-brand focus:ring-brand"
                                             />
                                             <label htmlFor={`extra-${plan.name}`} className="text-sm font-medium text-slate-700 cursor-pointer select-none">
-                                                Add Extra Car Verification (+£{plan.extraCarPrice.toFixed(2)})
+                                                + Extra Car (+£{plan.extraCarPrice.toFixed(2)})
                                             </label>
                                         </div>
                                     </div>
@@ -107,7 +117,11 @@ export function Pricing() {
                                         ))}
                                     </ul>
 
-                                    <Button variant={plan.highlight ? 'primary' : 'secondary'} className="w-full mt-auto">
+                                    <Button 
+                                        variant={plan.highlight ? 'primary' : 'secondary'} 
+                                        className="w-full mt-auto"
+                                        onClick={() => window.open(getPaymentLink(plan.name, isExtraCar), '_blank')}
+                                    >
                                         Choose {plan.name}
                                     </Button>
                                 </Card>

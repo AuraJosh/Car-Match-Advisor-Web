@@ -81,7 +81,7 @@ export function About() {
                     <div className="relative z-10 max-w-4xl">
                         <h3 className="text-3xl font-bold mb-6">Our Mission</h3>
                         <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-8">
-                            "At Car Match Advisor, our mission is to convert overwhelmed car buyers into confident owners. We strip away the dealership stress, the hours of endless research, and the uncertainty of commission-driven sales. We provide you with clear, data-backed choices so you can make the second-biggest purchase of your life with absolute peace of mind."
+                            "At Car Match Advisor, our mission is to convert overwhelmed car buyers into confident owners. We strip away the dealership stress, the hours of endless research, and the uncertainty of commission-driven sales. We provide you with clear, data-backed choices so you can make one of the biggest purchases of your life with absolute peace of mind."
                         </p>
                         <div className="flex items-center gap-4">
                             <div className="w-12 h-12 bg-brand rounded-full flex items-center justify-center font-bold text-white">

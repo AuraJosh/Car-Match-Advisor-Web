@@ -13,9 +13,9 @@ export function Hero() {
                     <span className="inline-block py-1 px-3 rounded-full bg-slate-100 border border-slate-200 text-sm font-semibold text-slate-600 mb-6">
                         Independent. Unbiased. Expert.
                     </span>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-slate-900 mb-8 leading-[0.9]">
-                        Expert Car-Buying <br className="hidden md:block" />
-                        <span className="text-slate-500">Advice Made Simple.</span>
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9]">
+                        <span className="text-brand">Expert Car-Buying</span> <br className="hidden md:block" />
+                        <span className="text-brand-light">Advice Made Simple.</span>
                     </h1>
                 </motion.div>
 

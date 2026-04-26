@@ -43,6 +43,14 @@ export function Footer() {
                 </div>
             </div>
 
+            <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-500 text-sm relative z-10">
+                <p>&copy; {new Date().getFullYear()} Car Match Advisor. All rights reserved.</p>
+                <div className="flex gap-6">
+                    <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+                </div>
+            </div>
+
             {/* Watermark */}
             <div className="absolute bottom-[-5vw] left-0 w-full text-center pointer-events-none opacity-5">
                 <span className="text-[15vw] font-black tracking-tighter leading-none text-white whitespace-nowrap">
